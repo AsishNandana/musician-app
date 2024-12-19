@@ -3,19 +3,23 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18  # Make sure the correct Node.js version is used
+      nodejs: 18  # Ensure the right Node.js version is used
     commands:
       - echo "Installing dependencies..."
       - npm install
+
   build:
     commands:
       - echo "Building the application..."
       - NODE_ENV=production npm run build
+
 artifacts:
   files:
-    - '**/*'
+    - '**/*'  # Include all files in the build artifact
   discard-paths: yes
-  cache:
+
+cache:
   paths:
-    - node_modules/**/*  # Optionally, clear npm cache if there are issues
+    - node_modules/**/*  # Cache node_modules to speed up subsequent builds
+
 
