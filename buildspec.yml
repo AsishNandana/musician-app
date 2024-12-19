@@ -1,22 +1,17 @@
 version: 0.2
 
-phases: 
-    build:
-        commands:
-            - echo "Build block"
-            - ls
-            - echo "Running tests to check if "Congratulations" present in index.html file"
-            - grep "Congratulations" index.html
-    post_build:
-        commands:
-            - echo "Post build phase"
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Building the application...
+      - npm run build
 artifacts:
-    files:
-        - scripts/install_dependencies
-        - scripts/start_server
-        - scripts/stop_server
-        - index.html
-        - appspec.yml
-    discard-paths: yes
-
-            
+  files:
+    - '**/*'
+  discard-paths: yes
