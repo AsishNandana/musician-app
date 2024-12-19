@@ -4,11 +4,11 @@ phases:
   pre_build:
     commands:
       - echo "Installing dependencies..."
-      - dnf npm install
+      - npm install
   build:
     commands:
       - echo "Building the application..."
-      - NODE_ENV=production dnf npm run build
+      - NODE_ENV=production npm run build
 artifacts:
   files:
     - '**/*'
