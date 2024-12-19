@@ -3,14 +3,13 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo "Starting pre-build phase..."
+      - echo "Installing dependencies..."
       - npm install
   build:
     commands:
       - echo "Building the application..."
-      - npm run build
+      - NODE_ENV=production npm run build
 artifacts:
   files:
     - '**/*'
   discard-paths: yes
-
