@@ -1,17 +1,16 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 14
+  pre_build:
     commands:
-      - echo Installing dependencies...
+      - echo "Starting pre-build phase..."
       - npm install
   build:
     commands:
-      - echo Building the application...
+      - echo "Building the application..."
       - npm run build
 artifacts:
   files:
     - '**/*'
   discard-paths: yes
+
