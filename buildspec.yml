@@ -1,7 +1,9 @@
 version: 0.2
 
 phases:
-  pre_build:
+  install:
+    runtime-versions:
+      nodejs: 18  # Make sure the correct Node.js version is used
     commands:
       - echo "Installing dependencies..."
       - npm install
