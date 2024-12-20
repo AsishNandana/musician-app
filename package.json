@@ -9,7 +9,8 @@
     "start-dev": "nodemon app.js",
     "build": "echo 'No build step defined. Only install dependencies.'",  
     "install-dependencies": "npm install",
-    "postinstall": "npm audit fix"
+    "postinstall": "npm audit fix",
+    "prepare": "echo 'Skipping prepare step'"
   },
   "author": "Jonathan Spruance",
   "license": "ISC",
