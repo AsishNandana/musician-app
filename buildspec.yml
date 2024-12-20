@@ -21,5 +21,3 @@ artifacts:
 cache:
   paths:
     - node_modules/**/*  # Cache node_modules to speed up subsequent builds
-
-
