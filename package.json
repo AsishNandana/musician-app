@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "start": "pm2 start app.js --name nodejs-restapi-poc",   // PM2 for production
-    "start-dev": "nodemon app.js"    // Use nodemon for development
+    "start": "pm2 start app.js --name nodejs-restapi-poc",   
+    "start-dev": "nodemon app.js"
   },
   "author": "Jonathan Spruance",
   "license": "ISC",
