@@ -1,21 +1,13 @@
 #!/bin/bash
 
 # Navigate to the application directory
-cd /var/app/current || exit
+cd /var/www/html
 
 # Ensure there are no old instances of the app running
 echo "Stopping old Node.js processes..."
-pm2 stop all || true  # Stops any running Node.js processes (ignores errors if no process is running)
+pm2 stop all || true  # This stops any running Node.js processes (use pm2 or similar)
 
-# Install dependencies (just in case they were not installed)
-echo "Installing dependencies..."
-npm install --production
-
-# Start the application using pm2 (preferred for production)
+# Start the application using pm2 or node (pm2 is preferred for production)
 echo "Starting Node.js app..."
-pm2 start app.js --name musician-app  # Adjust 'app.js' if your entry file is named differently
-pm2 save  # Save the process list for auto-restart
-
-# Ensure pm2 restarts on EC2 reboot
-echo "Enabling pm2 to start on reboot..."
-pm2 startup systemd -u ec2-user --hp /home/ec2-user
+pm2 start server.js # Adjust if your main server file is different
+pm2 save # Ensure pm2 restarts on EC2 reboot
