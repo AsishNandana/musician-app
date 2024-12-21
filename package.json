@@ -1,12 +1,14 @@
 {
-  "name": "nodejs-restapi-poc",
+  "name": "musician-app",  
   "version": "1.0.0",
-  "description": "A NodeJS REST API poc",
-  "main": "app.js",
+  "description": "A NodeJS REST API for Musician App",
+  "main": "app.js", 
   "scripts": {
-    "test": "jest",
-    "start": "pm2 start app.js --name nodejs-restapi-poc",   
-    "start-dev": "nodemon app.js"
+    "test": "jest",  
+    "start": "pm2 start app.js --name musician-app",  
+    "start-dev": "nodemon app.js",  
+    "install-dependencies": "npm install --production",  
+    "postinstall": "npm run install-dependencies" 
   },
   "author": "Jonathan Spruance",
   "license": "ISC",
@@ -23,5 +25,4 @@
     "supertest": "^4.0.0"
   }
 }
-
 
