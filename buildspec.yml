@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 22 # Matches your Elastic Beanstalk Node.js version
+    commands:
+      - echo "Installing dependencies"
+      - npm install --quiet # Reduce logs to save memory
+  build:
+    commands:
+      - echo "Building application"
+      - npm run build -- --max-old-space-size=512 # Limit memory usage during build
+  post_build:
+    commands:
+      - echo "Preparing deployment package"
+      - zip -r app.zip . # Package the app for deployment
+      - mv app.zip ../app.zip
+
+artifacts:
+  files:
+    - '../app.zip'
+  discard-paths: yes
