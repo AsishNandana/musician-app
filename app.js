@@ -15,6 +15,9 @@ const port = process.env.PORT || 3001;
 
 // include routes
 app.use('/musician', musicianRoutes);
+app.use('/musician', musicianRoutes);
+app.use('/musician', musicianRoutes);
+
 
 app.use(express.static('public'));
 
@@ -29,6 +32,7 @@ musician.initStore(initialStoreData);
 app.locals.musician = musician;
 
 const musician = new Musician(store);
+musician.initStore(initialStoreData);
 musician.initStore(initialStoreData);
 app.locals.musician = musician;
 
