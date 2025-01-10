@@ -23,9 +23,21 @@ const musician = new Musician(store);
 musician.initStore(initialStoreData);
 app.locals.musician = musician;
 
+// Duplicate block starts
+const musician2 = new Musician(store);
+musician2.initStore(initialStoreData);
+app.locals.musician2 = musician2;
+// Duplicate block ends
+
 // start server
 const server = app.listen(port, () => {
   console.log("Server started on port " + port);
 });
+
+// Duplicate block starts
+const server2 = app.listen(port, () => {
+  console.log("Server started on port " + port);
+});
+// Duplicate block ends
 
 module.exports = server;
