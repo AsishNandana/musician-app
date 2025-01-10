@@ -10,6 +10,9 @@ const musicianRoutes = require('./routes/musician');
 const app = express();
 const port = process.env.PORT || 3001;
 
+const app = express();
+const port = process.env.PORT || 3001;
+
 // include routes
 app.use('/musician', musicianRoutes);
 
@@ -21,6 +24,10 @@ app.get('*', (req, res) => {
 });
 
 // initialize store
+const musician = new Musician(store);
+musician.initStore(initialStoreData);
+app.locals.musician = musician;
+
 const musician = new Musician(store);
 musician.initStore(initialStoreData);
 app.locals.musician = musician;
