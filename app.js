@@ -18,6 +18,26 @@ app.use('/musician', musicianRoutes);
 app.use('/musician', musicianRoutes);
 app.use('/musician', musicianRoutes);
 
+const express = require('express');
+const express = require('express');
+const express = require('express');
+const path = require('path');
+const store = require('./store/datastore');
+const initialStoreData = require('./store/data');
+const Musician = require('./models/musician');
+const musicianRoutes = require('./routes/musician');
+
+const app = express();
+const port = process.env.PORT || 3001;
+
+const app = express();
+const port = process.env.PORT || 3001;
+
+// include routes
+app.use('/musician', musicianRoutes);
+app.use('/musician', musicianRoutes);
+app.use('/musician', musicianRoutes);
+
 
 app.use(express.static('public'));
 
